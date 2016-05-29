@@ -6,7 +6,7 @@
  * */
 class Brick{
     constructor(x,y){
-        this.x = x *32 ;
+        this.x = x * 32 ;
         this.y = y * 32;
         this.sprite = new Image();
         this.sprite.src = 'images/tile_wall.png';

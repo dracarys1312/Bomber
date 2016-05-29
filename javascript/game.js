@@ -22,7 +22,7 @@ window.onload = function () {
 };
 var player;
 function gameStart() {
-    player = new Bomber(0, 0);
+    player = new Bomber(32, 32);
     for (var i = 0; i < 20; i++) {
         for (var j = 0; j < 20; j++) {
             if (map[i][j] == 1) {
@@ -47,13 +47,14 @@ var gameLoop = function () {
 function gameDrawer(context) {
     context.fillRect(0, 0, window.innerWidth, window.innerHeight);
     context.fillStyle = 'white';
-    player.draw(context);
+
     for (var i = 0; i < wallBrick.length; i++) {
         wallBrick[i].draw(context);
     }
     for (var i = 0; i < wallWood.length; i++) {
         wallWood[i].draw(context);
     }
+    player.draw(context)
 };
 function gameUpdate() {
     player.update();

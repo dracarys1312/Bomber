@@ -23,16 +23,16 @@ class Bomber{
     }
     update() {
         var isMove = true;
-        var rect1 = {x:this.x + this.speedX, y:this.y + this.speedY, width:48, height:48};
+        var rect1 = {x:this.x+8 + this.speedX, y:this.y+8 + this.speedY, width:32, height:32};
         for (var i = 0; i < wallBrick.length; i++) {
-            var rect2 = {x:wallBrick[i].x, y:wallBrick[i].y, width:48, height:48};
+            var rect2 = {x:wallBrick[i].x, y:wallBrick[i].y, width:32, height:32};
             if (this.checkCollision(rect1, rect2) == true) {
                 isMove = false;
                 break;
             }
         }
         for (var i = 0; i < wallWood.length; i++) {
-            var rect2 = {x:wallWood[i].x, y:wallWood[i].y, width:48, height:48};
+            var rect2 = {x:wallWood[i].x , y:wallWood[i].y, width:32, height:32};
             if (this.checkCollision(rect1, rect2) == true) {
                 isMove = false;
                 break;
@@ -80,8 +80,8 @@ class Bomber{
                 break;
         }
     }
-    shot() {
-        var bullet = new Bullet(this.x + 12, this.y + 12, this.direction);
-        this.bulletArray.push(bullet);
-    }
+    // shot() {
+    //     var bullet = new Bullet(this.x + 12, this.y + 12, this.direction);
+    //     this.bulletArray.push(bullet);
+    // }
 }
