@@ -23,8 +23,8 @@ window.onload = function () {
 var player;
 function gameStart() {
     player = new Bomber(0, 0);
-    for (var i = 0; i < 26; i++) {
-        for (var j = 0; j < 26; j++) {
+    for (var i = 0; i < 20; i++) {
+        for (var j = 0; j < 20; j++) {
             if (map[i][j] == 1) {
                 // console.log("brick");
                 var brick = new Brick(i, j);
