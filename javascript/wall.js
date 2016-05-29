@@ -6,8 +6,8 @@
  * */
 class Brick{
     constructor(x,y){
-        this.x = x * 16;
-        this.y = y * 16;
+        this.x = x *48 ;
+        this.y = y * 48;
         this.sprite = new Image();
         this.sprite.src = 'images/tile_wall.png';
     }
@@ -17,8 +17,8 @@ class Brick{
 }
 class wood{
     constructor(x,y){
-        this.x = x * 16;
-        this.y = y * 16;
+        this.x = x * 48;
+        this.y = y * 48;
         this.sprite = new Image();
         this.sprite.src = 'images/tile_wood.png';
     }
