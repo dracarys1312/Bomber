@@ -23,21 +23,21 @@ class Bomber{
     }
     update() {
         var isMove = true;
-        // var rect1 = {x:this.x + this.speedX, y:this.y + this.speedY, width:48, height:48};
-        // for (var i = 0; i < bombArray.length; i++) {
-        //     var rect2 = {x:bombArray[i].x, y:bomeArray[i].y, width:48, height:48};
-        //     if (this.checkCollision(rect1, rect2) == true) {
-        //         isMove = false;
-        //         break;
-        //     }
-        // }
-        // for (var i = 0; i < wallArray.length; i++) {
-        //     var rect2 = {x:wallArray[i].x, y:wallArray[i].y, width:48, height:48};
-        //     if (this.checkCollision(rect1, rect2) == true) {
-        //         isMove = false;
-        //         break;
-        //     }
-        // }
+        var rect1 = {x:this.x + this.speedX, y:this.y + this.speedY, width:48, height:48};
+        for (var i = 0; i < wallBrick.length; i++) {
+            var rect2 = {x:wallBrick[i].x, y:wallBrick[i].y, width:48, height:48};
+            if (this.checkCollision(rect1, rect2) == true) {
+                isMove = false;
+                break;
+            }
+        }
+        for (var i = 0; i < wallWood.length; i++) {
+            var rect2 = {x:wallWood[i].x, y:wallWood[i].y, width:48, height:48};
+            if (this.checkCollision(rect1, rect2) == true) {
+                isMove = false;
+                break;
+            }
+        }
         // for (var i = 0; i < woodArray.length; i++) {
         //     var rect2 = {x:woodArray[i].x, y:woodArray[i].y, width:48, height:48};
         //     if (this.checkCollision(rect1, rect2) == true) {

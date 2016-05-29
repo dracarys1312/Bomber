@@ -1,6 +1,8 @@
 /**
  * Created by Son Nui on 5/16/2016.
  */
+var wallBrick= new Array();
+var wallWood=new Array();
 var context;
 window.onload = function () {
     var canvas = document.createElement("canvas");
@@ -21,6 +23,20 @@ window.onload = function () {
 var player;
 function gameStart() {
     player = new Bomber(0, 0);
+    for (var i = 0; i < 26; i++) {
+        for (var j = 0; j < 26; j++) {
+            if (map[i][j] == 1) {
+                // console.log("brick");
+                var brick = new Brick(i, j);
+                wallBrick.push(brick);
+            }else if (map[i][j] == 2) {
+                // console.log("steel");
+                var wood = new Wood(i, j);
+                wallWood.push(wood);
+            }
+
+        }
+    }
 }
 
 var gameLoop = function () {
@@ -32,10 +48,16 @@ function gameDrawer(context) {
     context.fillRect(0, 0, window.innerWidth, window.innerHeight);
     context.fillStyle = 'white';
     player.draw(context);
-}
-
+    for (var i = 0; i < wallBrick.length; i++) {
+        wallBrick[i].draw(context);
+    }
+    for (var i = 0; i < wallWood.length; i++) {
+        wallWood[i].draw(context);
+    }
+};
 function gameUpdate() {
     player.update();
+    
 }
 
 window.onkeydown = function (e) {
